@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DAHLLAND</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script>
+        $.get('views/content/info.html', function(Data) {
+            document.getElementById('content').innerHTML = Data;
+        })
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <img src="img/logo.png">
+        </div>
+        <div class="links">
+            <a class="link" target="_blank" href="" style="margin-right: 5vw;"><p>Ansök</p></a>
+            <a class="link" target="_blank" href="http://minecraft.dahlland.se:8123/"><p>Karta</p></a>
+        </div>
+        <div class="fade">
+            <div>
+                <h2>Läs mer</h2>
+                <img width="100px" src="img/arrowdown2.png">
+            </div>
+        </div>
+        <div class="info">
+            <div class="content" id="content">
+                <h2 style="color: red;">Denna text är en platshållare. <br>
+                    Om du kan läsa detta så har något troligtvis gått fel!
+                </h2>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="spacer"></div>
+            <div class="footercontent">
+                <p>&#xa9; Copyright Nils Korsfeldt</p>
+                <p>Kontakt: nils.korsfeldt@gmail.com</p>
+                <p>Källkod: <a href="">GitHub</a></p>
+                <p>XXXXXXXXXXXXXXXXXXXXXXXX </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

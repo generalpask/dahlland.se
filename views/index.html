@@ -5,13 +5,17 @@
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DAHLLAND</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheets/jquery.fancybox.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="stylesheets/main.css">
+
+    <!-- 
+    JS (defined at the end of <body>:
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script>
-        $.get('views/content/info.html', function(Data) {
-            document.getElementById('content').innerHTML = Data;
-        })
-    </script>
+    <script type="text/javascript" src="scripts/jquery.fancybox.js"></script>
+    <script src="scripts/scripts.js"></script>
+    -->
 </head>
 <body>
     <div class="main">
@@ -23,16 +27,24 @@
             <a class="link" target="_blank" href="http://minecraft.dahlland.se:8123/"><p>Karta</p></a>
         </div>
         <div class="fade">
-            <div>
+            <div id="scroll">
                 <h2>Läs mer</h2>
                 <img width="100px" src="img/arrowdown2.png">
             </div>
         </div>
         <div class="info">
-            <div class="content" id="content">
-                <h2 style="color: red;">Denna text är en platshållare. <br>
-                    Om du kan läsa detta så har något troligtvis gått fel!
-                </h2>
+            <div class="content">
+                <div class="text" id="text">
+                    <h2 style="color: red;">Denna text är en platshållare. <br>
+                        Om du kan läsa detta så har något troligtvis gått fel!
+                    </h2>
+                </div>
+                <div class="image">
+                    <a href="img/IMG_20190312_003047.jpg" data-fancybox="image" data-caption="Den trogna servern Tronjheim">
+                        <img src="img/IMG_20190312_003047.jpg" title="Tronjheim">
+                    </a>
+                    <p>"Tronjheim"</p>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -40,10 +52,13 @@
             <div class="footercontent">
                 <p>&#xa9; Copyright Nils Korsfeldt</p>
                 <p>Kontakt: nils.korsfeldt@gmail.com</p>
-                <p>Källkod: <a href="">GitHub</a></p>
+                <p>Källkod: <a target="_blank" href="https://github.com/generalpask/dahlland.se">GitHub</a></p>
                 <p>XXXXXXXXXXXXXXXXXXXXXXXX </p>
             </div>
         </div>
     </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.fancybox.js"></script>
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>

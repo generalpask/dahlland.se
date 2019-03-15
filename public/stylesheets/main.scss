@@ -41,20 +41,28 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
     display: flex;
     justify-content: center;
     .link {
+        position: relative;
+        display: flex;
+        justify-content: center;
         text-align: center;
-        text-decoration: none;
+        margin-top: 5vh;
+        
         width: 300px;
         height: 100px;
-        margin-top: 5vh;
+        
         background-color: greenyellow;
         color: black;
+        text-decoration: none;
         box-shadow: 5px 5px 10px grey;
         border-radius: 5px;
         transform: scale(1.0);
         transition: transform 0.2s;
+        
         p {
             font-size: 45px;
-            margin-top: 25px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
         }
         &:hover { 
             transform: scale(1.1);
@@ -99,45 +107,75 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
     display: flex;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.7);
-    .content {
+    .content-wrapper {
         margin-top: 20vh;
         width: 60%;
         background-color: white;
         padding: 7.5vh 5vw 7.5vh 5vw;
         margin-bottom: 10vh;
         border-radius: 10px;
-        .text {
-            width: 65%;
-            float: left;
-            h2, h3 {
-                margin-bottom: 0.5vh;
-            }
-            h4 {
-                margin-top: 1vh;
-                margin-bottom: 0.5vh;
-            }
-            div.line {
-                width: 100%;
-                height: 1px;
-                background-color: grey;
-                margin-bottom: 0.5vh;
-            }
-            ul {
-                margin-left: 1vw;
+        nav {
+            .navitem {
+                margin-right: 10px;
+                padding: 5px;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
             }
         }
-        .image {
-            float: right;
-            border: 1px solid gray;
-            border-radius: 5px;
-            padding: 1vh;
-            box-sizing: border-box;
-            img {
-                width: 350px;
-                
+        .content {
+            margin-top: 5vh;
+
+            /* About */
+            .text {
+                width: 65%;
+                float: left;
+                h2, h3 {
+                    margin-bottom: 0.5vh;
+                }
+                h4 {
+                    margin-top: 1vh;
+                    margin-bottom: 0.5vh;
+                }
+                div.line {
+                    width: 100%;
+                    height: 1px;
+                    background-color: grey;
+                    margin-bottom: 0.5vh;
+                }
+                ul {
+                    margin-left: 1vw;
+                }
+            }
+            .image {
+                float: right;
+                border: 1px solid gray;
+                border-radius: 5px;
+                padding: 1vh;
+                box-sizing: border-box;
+                img {
+                    width: 350px;
+                    
+                }
+            }
+            /* End of About*/
+
+            /* Players */
+            .player {
+                padding: 1vh;
+                margin-bottom: 2vh;
+                position: relative;
+                p {
+                    margin-left: 1vh;
+                    padding: inherit;
+                    position: absolute;
+                    top: 0;
+                }
+                img, p {
+                    display: inline-block;
+                }
             }
         }
-        
     }
 }
 .footer {
@@ -160,3 +198,7 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
         display: inline-block;
     }
 } 
+
+.fancybox-lock, .fancybox-overlay {
+    overflow: visible !important;
+}

@@ -6,6 +6,10 @@ get "/" do
     send_file "./views/index.html"
 end
 
-get "/info" do
-    send_file "./views/content/info.html"
+get "/about" do
+    send_file "./views/content/about.html"
+end
+
+get "/players" do
+    send_file "./views/content/players.html"
 end

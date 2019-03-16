@@ -23,12 +23,3 @@ $("div#scroll").click(function() {
         scrollTop: $(".info").offset().top      
     }, 'slow');
 });
-
-//Fancybox settings
-$('[data-fancybox="image"]').fancybox({
-    animationEffect: "fade",
-    buttons: [
-        //"zoom",
-        //"close"
-    ], 
-});

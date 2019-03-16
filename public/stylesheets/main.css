@@ -229,7 +229,3 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
 .footer .spacer, .footer .footercontent {
   display: inline-block;
 }
-
-.fancybox-lock, .fancybox-overlay {
-  overflow: visible !important;
-}

@@ -178,13 +178,6 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
                         margin-left: 1vw;
                     }
                 }
-                .hack {
-                    margin-left: 1vh;
-                    padding: inherit;
-                    top: 0;
-                    z-index: -1;
-                    visibility: hidden;
-                }
                 img, .playertext, .hack {
                     display: inline-block;
                 }

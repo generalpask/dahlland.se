@@ -23,3 +23,24 @@ $("div#scroll").click(function() {
         scrollTop: $(".info").offset().top      
     }, 'slow');
 });
+
+//Server status
+MinecraftAPI.getServerStatus('minecraft.dahlland.se', function (err, status) {
+    if (err) {
+        return document.querySelector('.server-status').innerHTML = 'Error loading status';
+    }
+
+    document.querySelector('.server-online').innerHTML = status.online ? 'Online' : 'Offline';
+    document.querySelector('.status-indicator').style.backgroundColor = status.online ? '#00ff00' : '#ff0000';
+
+    $(".playersnow").html(status.players.now);
+    $(".playersmax").html(status.players.max);
+
+    var now = new Date().getTime();
+    var lastUpdated = status.last_updated;
+    var lastUpdatedDate = new Date(lastUpdated*1000);
+    var timeFromLastUpdatedDate = now - lastUpdatedDate;
+    var minutes = Math.floor((timeFromLastUpdatedDate % (1000 * 60 * 60)) / (1000 * 60));
+
+    $(".lastupdated").html(minutes);
+});

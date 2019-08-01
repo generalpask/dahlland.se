@@ -9,15 +9,15 @@ app.use(express.static(__dirname + '/public/'));
 app.use('/', router);
 app.listen(process.env.port || 3300);
 
-router.get('/',function(req,res){
+app.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/views/index.html'));
 });
 
-router.get('/about',function(req,res){
+app.get('/about',function(req,res){
     res.sendFile(path.join(__dirname+'/views/content/about.html'));
 });
 
-router.get('/players',function(req,res){
+app.get('/players',function(req,res){
     res.sendFile(path.join(__dirname+'/views/content/players.html'));
 });
 

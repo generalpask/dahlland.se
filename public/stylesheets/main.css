@@ -23,7 +23,7 @@ body {
   height: auto;
 }
 
-p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
+p, a, span, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
   font-family: Roboto Regular;
 }
 
@@ -140,46 +140,98 @@ p, a, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
 
 .info .content-wrapper .content {
   margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
   /* About */
   /* End of About*/
   /* Players */
 }
 
-.info .content-wrapper .content .text {
+.info .content-wrapper .content .col-left {
   width: 65%;
+  padding-right: 3vw;
+}
+
+.info .content-wrapper .content .col-left .text {
   float: left;
 }
 
-.info .content-wrapper .content .text h2, .info .content-wrapper .content .text h3 {
+.info .content-wrapper .content .col-left .text h2, .info .content-wrapper .content .col-left .text h3 {
   margin-bottom: 0.5vh;
 }
 
-.info .content-wrapper .content .text h4 {
+.info .content-wrapper .content .col-left .text h4 {
   margin-top: 1vh;
   margin-bottom: 0.5vh;
 }
 
-.info .content-wrapper .content .text div.line {
+.info .content-wrapper .content .col-left .text div.line {
   width: 100%;
   height: 1px;
   background-color: grey;
   margin-bottom: 0.5vh;
 }
 
-.info .content-wrapper .content .text ul {
+.info .content-wrapper .content .col-left .text ul {
   margin-left: 1vw;
 }
 
-.info .content-wrapper .content .image {
-  float: right;
+.info .content-wrapper .content .col-right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info .content-wrapper .content .col-right > * {
+  margin-top: 2vw;
+}
+
+.info .content-wrapper .content .col-right .image {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 1vh;
   box-sizing: border-box;
 }
 
-.info .content-wrapper .content .image img {
+.info .content-wrapper .content .col-right .image img {
   width: 350px;
+}
+
+.info .content-wrapper .content .col-right .status {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.info .content-wrapper .content .col-right .status .server-icon {
+  width: 80px;
+  height: 80px;
+  margin-right: 8px;
+  border: 1px solid orange;
+}
+
+.info .content-wrapper .content .col-right .status .status-info-wrapper {
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+}
+
+.info .content-wrapper .content .col-right .status .status-info-wrapper .server-status {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: row;
+}
+
+.info .content-wrapper .content .col-right .status .status-info-wrapper .server-status .status-indicator {
+  background-color: grey;
+  height: 0.75em;
+  width: 0.75em;
+  transform: translateY(40%);
+  border-radius: 2.5px;
+  margin-right: 6px;
 }
 
 .info .content-wrapper .content .player {

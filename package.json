@@ -2,13 +2,14 @@
     "name": "dahlland.se",
     "main": "app.js",
     "scripts": {
-	"start": "node app.js",
+        "start": "node app.js",
         "test": "echo 'Error: no test specified' &amp;&amp; exit 1"
     },
     "keywords": [],
     "author": "Nils Korsfeldt",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.16.4"
+        "express": "^4.16.4",
+        "node-sass": "^4.13.1"
     }
 }

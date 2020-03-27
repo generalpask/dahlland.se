@@ -215,27 +215,29 @@ p, a, span, li, h1, h2, h3, h4, h5, h6, .fancybox-caption {
             /* End of About*/
 
             /* Players */
-            .player {
-                padding: 1vh;
-                margin-bottom: 2vh;
-                position: relative;
-                width: 100%;
-                .playertext {
-                    margin-left: 1vh;
-                    padding: inherit;
-                    position: absolute;
-                    top: 0;
-                    h4 {
-                        margin-bottom: 0.5vh;
+            .players {
+                .player {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 1vh;
+                    margin-bottom: 2vh;
+                    position: relative;
+                    width: 100%;
+                    .playericon {
+                        height: 100px;
                     }
-                    ul {
-                        margin-left: 1vw;
+                    .playertext {
+                        margin-left: 1vh;
+                        padding: inherit;
+                        top: 0;
+                        h4 {
+                            margin-bottom: 0.5vh;
+                        }
+                        ul {
+                            margin-left: 1vw;
+                        }
                     }
                 }
-                img, .playertext, .hack {
-                    display: inline-block;
-                }
-                
             }
         }
     }

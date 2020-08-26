@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
-const scss = require('./scss');
 const router = express.Router();
 const environment = process.env.NODE_ENV || 'development';
 
@@ -13,6 +12,12 @@ app.use('/', router);
 
 // Load SCSS
 var scssfile = 'public/stylesheets/main.scss'
+
+// Watch SCSS if devving
+if (environment == 'development') {
+    const scss = require('./scss');
+    scss.WatchSCSS(scssfile);
+}
 
 app.get('/',function(req,res){
     res.sendFile(path.join(__dirname+'/views/index.html'));
@@ -25,11 +30,6 @@ app.get('/about',function(req,res){
 app.get('/players',function(req,res){
     res.sendFile(path.join(__dirname+'/views/content/players.html'));
 });
-
-// Watch SCSS if devving
-if (environment == 'development') {
-    scss.WatchSCSS(scssfile);
-}
 
 // Start the server
 var port = 3300;

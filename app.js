@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const scss = require('./scss');
 const router = express.Router();
+const environment = process.env.NODE_ENV || 'development';
 
 app.use(express.static(__dirname + '/public/'));
 
@@ -25,19 +26,30 @@ app.get('/players',function(req,res){
     res.sendFile(path.join(__dirname+'/views/content/players.html'));
 });
 
-// Watch SCSS
-scss.WatchSCSS(scssfile);
+// Watch SCSS if devving
+if (environment == 'development') {
+    scss.WatchSCSS(scssfile);
+}
 
 // Start the server
 var port = 3300;
-var server = app.listen(port, () => console.log('dahlland.se listening on port ' + port));
+var server = app.listen(port, () => {
+    if (environment == 'production') {
+        console.log('\x1b[34m'+'\nSTARTING SERVER FOR PRODUCTION'+'\x1b[0m');
+        console.log('dahlland.se listening on port ' + port);
+    }
+    console.log('port ' + port);
+});
 
 // Shutdown on Ctrl+C
 process.on('SIGINT', function() {
 	console.log('\x1b[34m'+'\nSIGINT received, shutting down...');
-	process.stdout.write('\x1b[33m'+'Unwatching '+'\x1b[36m['+scssfile+']\x1b[33m'+'... ');
-    fs.unwatchFile(scssfile);
-    process.stdout.write('\x1b[32m'+'Done!\n'+'\x1b[0m');
+
+    if (environment == 'development') {
+        process.stdout.write('\x1b[33m'+'Unwatching '+'\x1b[36m['+scssfile+']\x1b[33m'+'... ');
+        fs.unwatchFile(scssfile);
+        process.stdout.write('\x1b[32m'+'Done!\n'+'\x1b[0m');
+    }
 
 	process.stdout.write('\x1b[33m'+'Closing server... ');
 	server.close();

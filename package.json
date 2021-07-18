@@ -3,8 +3,8 @@
     "main": "app.js",
     "scripts": {
         "start": "env NODE_ENV=production node app.js",
-        "dev"  : "env NODE_ENV=development nodemon app.js",
-        "test" : "echo 'Error: no test specified' &amp;&amp; exit 1"
+        "dev": "env NODE_ENV=development nodemon app.js",
+        "test": "echo 'Error: no test specified' &amp;&amp; exit 1"
     },
     "keywords": [],
     "author": "Nils Korsfeldt",

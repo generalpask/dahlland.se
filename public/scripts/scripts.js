@@ -6,15 +6,17 @@ $("a#id_about").click(function() {
     $.get('/about', function(Data) {
         document.getElementById('content').innerHTML = Data;
     });
-    $(this).css("background-color", "greenyellow");
-    $("a#id_players").css("background-color", "white");
+
+    $(this).addClass("active");
+    $("a#id_players").removeClass("active");
 });
 $("a#id_players").click(function() {
     $.get('/players', function(Data) {
         document.getElementById('content').innerHTML = Data;
     });
-    $(this).css("background-color", "greenyellow");
-    $("a#id_about").css("background-color", "white");
+
+    $(this).addClass("active");
+    $("a#id_about").removeClass("active");
 });
 
 // Click to scroll
